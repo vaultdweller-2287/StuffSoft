@@ -1,52 +1,95 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-<title>StuffSoft Wiki</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>StuffSoft Wiki</title>
 </head>
 
 <body>
     <div id="page">
-      <div id="pagetop">
-		<h1>StuffSoft Wiki</h1>
-        <div class="links">    	
-            <ul>
-                <li><a href="bindex.html">Blog</a></li>
-                <li><a href="windex.html">Wiki</a></li>
-                <li><a href="sindex.html">Software</a></li>
-                <li><a href="index.html"">Home</a></li>
-            </ul>
-        </div>
-     </div> 
-<div id="main">
-	<div class="content">
-        	<div class="main_top">
-            	<p>Authored: 8:01 PM EST 01/01/25 </p>
-                <p>Migrated: 4:18 PM EST 02/03/25</p>
+        <div id="pagetop">
+            <h1>StuffSoft Wiki</h1>
+            <div class="links">    	
+                <ul>
+                    <li><a href="bindex.html">Blog</a></li>
+                    <li><a href="windex.html">Wiki</a></li>
+                    <li><a href="sindex.html">Software</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
             </div>
-                <p></p>
-           	<div class="main_body">
-                <h1>K-Debloater</h1>
-                <p>A debloat tool for KDE Plasma 6.</p>
-                <p><a href="https://github.com/vaultdweller-2287/K-Debloater">Download from Github</a></p>
-                <h2>Installation</h2>
-                <p>Download the script from the Github repo and run the following commands:</p>
-                <pre>
-                    $ chmod +x /path/to/file/kdebloater(version).sh
-                    # sudo ./path/to/file/kdebloater(version).sh
-                </pre>
-                <p>Replace (version) with 4deb or 4opensuse depending on if you use debian or openSUSE respectively.</p>
-                <p>Replace /path/to/file with the directory the script is downloaded in.</p>
+        </div> 
+
+        <div id="main">
+            <div class="content">
+                <div class="main_top">
+                    <p>Authored: 4:36 PM EST 02/09/2025 (happy superbowl!)</p>
+                </div>
+                <div class="main_body">
+                    <h1 id="cyllm">CyLLM</h1>
+                    <p>A TUI/CLI GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).</p>
+                    
+                    <h1 id="installation">Installation</h1>
+                    <p>There are lots of methods to install and run CyLLM but I will keep it rational and use the most sensible one.</p>
+                    
+                    <h2 id="compile-it-from-source">Compile it from source</h2>
+                    <p>As the title says, this method requires you to compile CyLLM from source. This is pretty easy as it utilizes makefile.</p>
+                    
+                    <h3 id="step-1-download-prerequisites">Step 1: Download prerequisites</h3>
+                    <p>The files needed for this are:</p>
+                    <ul>
+                        <li><code>makefile</code> (found in /install)</li>
+                        <li><code>wizard.py</code> (found in /install)</li>
+                        <li><code>dependency-fixer.sh</code> (found in /install)</li>
+                        <li><code>main.c</code></li>
+                        <li>
+                            <pre><code class="lang-script.py">You are going to want to run `git clone` to obtain these.
+git clone <a href="https://github.com/vaultdweller-2287/CyLLM">https://github.com/vaultdweller-2287/CyLLM</a>
+If you do <span class="hljs-keyword">not</span> have git installed, <span class="hljs-built_in">run</span> <span class="hljs-keyword">the</span> following (may vary depending <span class="hljs-keyword">on</span> your distro <span class="hljs-keyword">of</span> choice, <span class="hljs-keyword">but</span> I use Debian so deal <span class="hljs-keyword">with</span> <span class="hljs-keyword">it</span>): 
+sudo apt install git
+### Step <span class="hljs-number">2</span>: Install dependencies
+Before we start, `cd` into the folder you cloned the repo <span class="hljs-keyword">in</span>.
+cd CyLLM
+You will need to install the required dependencies through `dependency-fixer`. Here<span class="hljs-string">'s how to do it:</span>
+sudo chmod +x dependency-fixer.sh
+sudo ./dependency-fixer.sh
+The follow dependencies will be installed.
+### Step <span class="hljs-number">2.1</span> Unattended install wizard
+The `wizard.py` file will autorun once `dependency-fixer` is done. It will download the LLM files for CyLLM.
+### Step <span class="hljs-number">3</span> Compile!
+In your terminal, run the following:
+make
+This will compile `main.c` into an executable which can be found inside the folder.</code></pre>
+                        </li>
+                    </ul>
+
+                    <h1 id="parameters">Parameters</h1>
+                    <p>We may only have one parameter so far, but at least we have one!</p>
+                    
+                    <h2 id="token-modifier">Token Modifier</h2>
+                    <p>In order to modify the amount of tokens in CyLLM, type <code>modtokens</code> in the message box. It will pull up a window where you can modify the modtoken parameter. This does not save if you close the program, well at least not yet ;).</p>
+                    
+                    <h1 id="faq-frequently-asked-questions-">FAQ (Frequently Asked Questions)</h1>
+                    <p>These are some questions that are probably never asked but just in case they are, here you go.</p>
+                    
+                    <h2 id="what-model-does-cyllm-use-">What model does CyLLM use?</h2>
+                    <p>Despite using the <em>GPT</em>4all library, it actually utilizes <code>llamacpp</code> as its model. However, we are planning to add the option to use a different model in the installer.</p>
+                    
+                    <h2 id="will-cyllm-be-packaged-into-my-distro-s-package-repos-">Will CyLLM be packaged into my distro's package repos?</h2>
+                    <p>We are not sure about distro packaging yet but we are certain that CyLLM will be packaged sooner rather than later for Debian and maybe Ubuntu.</p>
+                    
+                    <h2 id="what-system-do-i-need-for-cyllm-">What system do I need for CyLLM?</h2>
+                    <p>The exact specifications are not known but gpt4all requires any processor with AVX/AVX2 (Intel i3 2nd gen). The testing hardware was conducted on an i5-7200u with integrated graphics.</p>
+                </div>
             </div>
-            
-			</div>
             <div class="clear">&nbsp;</div>
         </div>
-<div id="footer">
-        <p>
-        <a href="https://github.com/vaultdweller-2287"></a></p>
+
+        <div id="footer">
+            <p>
+                <a href="https://github.com/vaultdweller-2287">GitHub Profile</a>
+            </p>
         </div>        
-        </div>
+    </div>
 </body>
 </html>
