@@ -1,11 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>StuffSoft Wiki</title>
 </head>
-
 <body>
     <div id="page">
         <div id="pagetop">
@@ -19,7 +18,6 @@
                 </ul>
             </div>
         </div> 
-
         <div id="main">
             <div class="content">
                 <div class="main_top">
@@ -43,20 +41,20 @@
                         <li><code>dependency-fixer.sh</code> (found in /install)</li>
                         <li><code>main.c</code></li>
                         <li>
-                            <pre><code class="lang-script.py">You are going to want to run `git clone` to obtain these.
+                            <pre><code class="lang-python">You are going to want to run `git clone` to obtain these.
 git clone <a href="https://github.com/vaultdweller-2287/CyLLM">https://github.com/vaultdweller-2287/CyLLM</a>
-If you do <span class="hljs-keyword">not</span> have git installed, <span class="hljs-built_in">run</span> <span class="hljs-keyword">the</span> following (may vary depending <span class="hljs-keyword">on</span> your distro <span class="hljs-keyword">of</span> choice, <span class="hljs-keyword">but</span> I use Debian so deal <span class="hljs-keyword">with</span> <span class="hljs-keyword">it</span>): 
+If you do not have git installed, run the following (may vary depending on your distro of choice, but I use Debian so deal with it): 
 sudo apt install git
-### Step <span class="hljs-number">2</span>: Install dependencies
-Before we start, `cd` into the folder you cloned the repo <span class="hljs-keyword">in</span>.
+### Step 2: Install dependencies
+Before we start, `cd` into the folder you cloned the repo in.
 cd CyLLM
-You will need to install the required dependencies through `dependency-fixer`. Here<span class="hljs-string">'s how to do it:</span>
+You will need to install the required dependencies through `dependency-fixer`. Here's how to do it:
 sudo chmod +x dependency-fixer.sh
 sudo ./dependency-fixer.sh
 The follow dependencies will be installed.
-### Step <span class="hljs-number">2.1</span> Unattended install wizard
+### Step 2.1: Unattended install wizard
 The `wizard.py` file will autorun once `dependency-fixer` is done. It will download the LLM files for CyLLM.
-### Step <span class="hljs-number">3</span> Compile!
+### Step 3: Compile!
 In your terminal, run the following:
 make
 This will compile `main.c` into an executable which can be found inside the folder.</code></pre>
@@ -84,7 +82,6 @@ This will compile `main.c` into an executable which can be found inside the fold
             </div>
             <div class="clear">&nbsp;</div>
         </div>
-
         <div id="footer">
             <p>
                 <a href="https://github.com/vaultdweller-2287">GitHub Profile</a>
